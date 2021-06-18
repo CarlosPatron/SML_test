@@ -1,0 +1,15 @@
+from django import forms
+from .models import Topic
+
+class newTopicForm(forms.ModelForm):
+    message = forms.CharField(
+        widget=forms.Textarea(
+            attrs={"rows": 10, "placeholder": "What is on your mind?"}
+        ),
+        max_length=4000,
+        help_text="The max lenght of the text is 4000 char."
+        )
+
+    class Meta:
+        model = Topic
+        fields = ["subject", "message"]
