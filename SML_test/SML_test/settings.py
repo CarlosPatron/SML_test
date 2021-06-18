@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
+    'accounts',
     'boards',
 ]
 
@@ -95,5 +96,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 
+LOGIN_REDIRECT_URL = 'home'
+
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Default redirect when user logout
+LOGOUT_REDIRECT_URL = 'home'
